@@ -1,0 +1,36 @@
+.card-range-size-container {
+  label {
+    font-weight: bold;
+  }
+  .card-range-size-input-container {
+    input[type="range"] {
+      cursor: pointer;
+      background: $color-purple-3;
+      border: 2px solid $color-white;
+      border-radius: 20px;
+      padding: 2px;
+      appearance: none;
+      width: 200px;
+      height: 15px;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: $color-white;
+      }
+    }
+    &:after {
+      padding: 10px;
+      content: "+";
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    &:before {
+      padding: 10px;
+      content: "-";
+      font-size: 2rem;
+      font-weight: 900;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.nav-next-previous {
+  display: flex;
+  justify-content: center;
+  .span-container {
+    display: flex;
+    border-radius: 20px;
+    color: $color-white;
+    background: $color-purple-3;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 26px;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+border: 2px solid $color-white;
+    cursor: pointer;
+    transition: 0.6s;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

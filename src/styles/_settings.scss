@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+$color-white: #f2f2f2;
+$color-white-tr: #f2f2f2d3;
+$color-purple-1: rgb(229, 180, 235);
+$color-purple-2: rgb(124, 75, 131);
+$color-purple-3: rgb(91, 48, 97);
+$color-black-tr: rgba(0, 0, 0, 0.63);
+$color-yellow: rgb(248, 252, 57);
+$color-type-fire: rgba(228, 125, 8, 0.822);
+$color-type-grass: rgba(73, 145, 6, 0.822);
+$color-type-water: rgba(31, 99, 139, 0.822);
+$color-type-ice: rgba(155, 212, 250, 0.822);
+$color-type-normal: rgba(111, 117, 121, 0.822);
+$color-type-psychic: rgba(136, 17, 151, 0.822);
+$color-type-electric: rgba(221, 224, 10, 0.822);
+$color-type-ground: rgba(94, 54, 2, 0.822);
+$color-type-fairy: rgba(252, 2, 156, 0.822);
+$color-type-dragon: rgba(122, 104, 22, 0.822);
+$color-type-dark: rgba(12, 12, 11, 0.822);
+$color-type-steel: #2c3e50dc;
+
+:root {
+  --card-size: 4;
+  --card-zoom: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: url("../assets/img/bg.jpg") no-repeat fixed center/cover;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  color: $color-white;
+  user-select: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  &:visited {
+    color: $color-white;
+  }
+}

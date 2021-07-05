@@ -1,0 +1,26 @@
+.count-pokemon-page-container {
+    label {
+        font-weight: bold;
+    }
+    .count-pokemon-page-input-container {
+        select {
+            appearance: none;
+            padding-left: 5px;
+            width: 80px;
+            height: 30px;
+            margin: 10px;
+            color: $color-white;
+            background-color: $color-purple-3;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 53px;
+            background-image: url("./../../assets/img/arrow-down.png");
+            outline: none;
+            border: 3px solid $color-white;
+            border-radius: 5px;
+            &:hover {
+            border: 3px solid $color-purple-1;
+            }
+        }
+    }
+}
