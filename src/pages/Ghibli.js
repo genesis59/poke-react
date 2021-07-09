@@ -1,13 +1,13 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 
-const Berry = () => {
+const Ghibli = () => {
   return (
     <div className="pokemon-list-container">
       <Navigation />
-      <h1 className="header-title">Berry</h1>
+      <h1 className="header-title">Ghibli</h1>
     </div>
   );
 };
 
-export default Berry;
+export default Ghibli;

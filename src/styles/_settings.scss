@@ -24,6 +24,8 @@ $color-type-steel: #2c3e50dc;
 :root {
   --card-size: 4;
   --card-zoom: 4px;
+  --display-open-close: none;
+  --anim-open-close: "";
 }
 
 * {
@@ -47,6 +49,7 @@ li {
   list-style-type: none;
 }
 a {
+  color: $color-white;
   text-decoration: none;
   &:visited {
     color: $color-white;

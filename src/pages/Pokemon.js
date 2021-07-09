@@ -5,12 +5,14 @@ import Navigation from "../components/Navigation";
 import NextPrevious from "../components/NextPrevious";
 import PokeCard from "../components/PokeCard";
 import CardSizeRange from "../components/CardSizeRange";
+import SelectTypePokemon from "../components/SelectTypePokemon";
 
 const Pokemon = () => {
   // liste des pokemon de la page courante
   const [data, setData] = useState([]);
   // détail des pokemon de la page courante
   const [dataDetailPokemon, setDataDetailPokemon] = useState([]);
+  const [indexTabType, setIndexTabType] = useState(0);
   // page courante
   const [page, setPage] = useState(
     "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12"
@@ -23,67 +25,166 @@ const Pokemon = () => {
   // existance page précédente/suivante
   const [existPagePrevious, setExistPagePrevious] = useState(true);
   const [existPageNext, setExistPageNext] = useState(true);
+  const [byType, setByType] = useState(false);
+  const [numberCardPageByType, setNumberCardPageByType] = useState(12);
+  const [disabledRadio, setDisabledRadio] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (playOnce) {
       // Récupération des données de la page
       const getListPokemon = async (page) => {
         await axios.get(page).then((res) => {
-          setData(res.data.results);
+          if (byType) {
+            setData(res.data.pokemon);
+            getDetailPokemon(res.data.pokemon);
+          } else {
+            setData(res.data.results);
+            getDetailPokemon(res.data.results);
+          }
           settingButtonNextPrevious(res);
           setPlayOnce(false);
-          getDetailPokemon(res.data.results);
         });
+      };
+      // Récupération des données détaillés des pokemon
+      const getDetailPokemon = async (res) => {
+        let tabListDetail = [];
+
+        for (let i = 0; i < res.length; i++) {
+          if (byType) {
+            await axios
+              .get(res[i].pokemon.url)
+              .then((res) => {
+                tabListDetail[i] = res;
+              })
+              .then(() => {
+                setDataDetailPokemon(
+                  tabListDetail.slice(
+                    indexTabType,
+                    parseInt(indexTabType) + parseInt(numberCardPageByType)
+                  )
+                );
+              });
+          } else {
+            await axios
+              .get(res[i].url)
+              .then((res) => {
+                tabListDetail[i] = res;
+              })
+              .then(() => setDataDetailPokemon(tabListDetail));
+          }
+        }
+      };
+      const settingButtonNextPrevious = (res) => {
+        if (byType) {
+          if (indexTabType === 0) {
+            setExistPagePrevious(false);
+          } else {
+            setExistPagePrevious(true);
+          }
+          if (indexTabType <= data.length - numberCardPageByType - 1) {
+            setExistPageNext(true);
+          } else {
+            setExistPageNext(false);
+          }
+        } else {
+          if (res.data.next) {
+            setPageNext(res.data.next);
+            setExistPageNext(true);
+          } else {
+            setExistPageNext(false);
+          }
+          if (res.data.previous) {
+            setPagePrevious(res.data.previous);
+            setExistPagePrevious(true);
+          } else {
+            setExistPagePrevious(false);
+          }
+        }
       };
       getListPokemon(page);
     }
-  }, [data, playOnce, page]);
-
-  // Récupération des données détaillés des pokemon
-  const getDetailPokemon = async (res) => {
-    let tabListDetail = [];
-
-    for (let i = 0; i < res.length; i++) {
-      await axios
-        .get(res[i].url)
-        .then((res) => {
-          tabListDetail[res.data.id] = res;
-        })
-        .then(() => setDataDetailPokemon(tabListDetail));
-    }
-  };
+  }, [data, playOnce, page, byType, numberCardPageByType, indexTabType]);
 
   // gestion nombres de pokemon par page
 
   const pokemonPerPage = (e) => {
-    let newPage = page.substr(0, page.length - 2) + e.target.value;
-    setPage(newPage);
+    setDisabledRadio(true);
+    setLoading(true);
+    setTimeout(() => {
+      setDisabledRadio(false);
+      setLoading(false);
+    }, 2000);
+    if (byType) {
+      setNumberCardPageByType(e.target.value);
+    } else {
+      let newPage = page.substr(0, page.length - 2) + e.target.value;
+      console.log(newPage);
+      setPage(newPage);
+      setNumberCardPageByType(e.target.value);
+    }
+
+    setPlayOnce(true);
+  };
+
+  // gestion des boutons radio pour la selection du type
+
+  const pokemonType = (e) => {
+    setDisabledRadio(true);
+    setLoading(true);
+    setTimeout(() => {
+      setDisabledRadio(false);
+      setLoading(false);
+    }, 3000);
+    console.log(e);
+    let pageType = "";
+    if (e.target.value === "no-type") {
+      pageType =
+        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=" +
+        numberCardPageByType;
+      setIndexTabType(0);
+      setByType(false);
+    } else {
+      pageType = "https://pokeapi.co/api/v2/type/" + e.target.value;
+      setIndexTabType(0);
+      setByType(true);
+    }
+    setPage(pageType);
     setPlayOnce(true);
   };
 
   // gestion des boutons next/previous
 
   const nextPage = () => {
-    setPage(pageNext);
-    setPlayOnce(true);
+    setDisabledRadio(true);
+    setLoading(true);
+    setTimeout(() => {
+      setDisabledRadio(false);
+      setLoading(false);
+    }, 2000);
+    if (byType) {
+      setIndexTabType(parseInt(indexTabType) + parseInt(numberCardPageByType));
+    } else {
+      setPage(pageNext);
+    }
+    if (!disabledRadio) {
+      setPlayOnce(true);
+    }
   };
+
   const previousPage = () => {
-    setPage(pagePrevious);
+    setDisabledRadio(true);
+    setLoading(true);
+    setTimeout(() => {
+      setDisabledRadio(false);
+      setLoading(false);
+    }, 2000);
+    if (byType) {
+      setIndexTabType(parseInt(indexTabType) - parseInt(numberCardPageByType));
+    } else {
+      setPage(pagePrevious);
+    }
     setPlayOnce(true);
-  };
-  const settingButtonNextPrevious = (res) => {
-    if (res.data.next) {
-      setPageNext(res.data.next);
-      setExistPageNext(true);
-    } else {
-      setExistPageNext(false);
-    }
-    if (res.data.previous) {
-      setPagePrevious(res.data.previous);
-      setExistPagePrevious(true);
-    } else {
-      setExistPagePrevious(false);
-    }
   };
 
   // gestion de la taille des cartes
@@ -116,7 +217,7 @@ const Pokemon = () => {
     }
     document.documentElement.style.setProperty(
       "--card-zoom",
-      coef * 0.5 + 2 + "px"
+      coef * 0.2 + 2 + "px"
     );
   };
 
@@ -125,17 +226,24 @@ const Pokemon = () => {
     <div className="pokemon-list-container">
       <Navigation />
       <h1 className="header-title">Liste des pokemon</h1>
-      <div className="config-page">
+      <div className="config-page" id="nextPrevious">
         <CountPokemonPage pokemonPerPage={pokemonPerPage} />
         <CardSizeRange cardSize={cardSize} />
+      </div>
+      <div className="config-type">
+        <SelectTypePokemon
+          pokemonType={pokemonType}
+          disableRadio={disabledRadio}
+        />
       </div>
       <NextPrevious
         existPagePrevious={existPagePrevious}
         existPageNext={existPageNext}
         previousPage={previousPage}
         nextPage={nextPage}
+        loading={loading}
       />
-      <PokeCard dataDetailPokemon={dataDetailPokemon} />;
+      <PokeCard dataDetailPokemon={dataDetailPokemon} />
     </div>
   );
 };

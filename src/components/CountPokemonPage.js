@@ -9,7 +9,6 @@ const CountPokemonPage = ({ pokemonPerPage }) => {
           <option value="12">12</option>
           <option value="16">16</option>
           <option value="24">24</option>
-          <option value="32">32</option>
         </select>
       </div>
     </div>

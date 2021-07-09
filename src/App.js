@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Pokemon from "./pages/Pokemon";
-import Berry from "./pages/Berry";
+import Ghibli from "./pages/Ghibli";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Pokemon} />
-          <Route path="/berry" exact component={Berry} />
+          <Route path="/ghibli" exact component={Ghibli} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

@@ -5,7 +5,6 @@ const pokeCard = ({ dataDetailPokemon }) => {
     });
     return types[0];
   };
-
   return (
     <div className="pokemon-list">
       {dataDetailPokemon.map((pokemon) => {
@@ -32,7 +31,8 @@ const pokeCard = ({ dataDetailPokemon }) => {
                 </p>
               </div>
               <div className="types">
-                {"Type(s) : " + pokemon.data.types.map((type) => type.type.name).join(", ")}
+                {"Type(s) : " +
+                  pokemon.data.types.map((type) => type.type.name).join(", ")}
               </div>
               <div className="capacity">
                 {pokemon.data.stats.map((stat) => {
