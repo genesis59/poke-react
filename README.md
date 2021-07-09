@@ -1,6 +1,6 @@
 # API-REACT
 
-Utilisation d'Open API pour la création de front-end avec Réact et Sass
+Utilisation d'Open API pour la création d'un front-end avec Réact et Sass
 
 ## API Utilisés
 
@@ -12,7 +12,7 @@ Utilisation d'Open API pour la création de front-end avec Réact et Sass
 
 * Node.js
 
-### Lancer l'environnement de dévoloppement
+### Lancer l'environnement de développement
 
 ```bash
 npm install
