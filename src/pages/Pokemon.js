@@ -37,6 +37,7 @@ const Pokemon = () => {
   const [count, setCount] = useState();
   const [choicePage, setChoicePage] = useState(1);
   const [typeOnGoing, setTypeOnGoing] = useState("Divers");
+  const [pageOnGoing,setPageOnGoing] = useState(1);
 
 
   useEffect(() => {
@@ -185,6 +186,7 @@ const Pokemon = () => {
           numberCardPageByType
       );
     }
+    setPageOnGoing(choicePage);
     if (!disabledRadio) {
       setPlayOnce(true);
     }
@@ -202,6 +204,7 @@ const Pokemon = () => {
     } else {
       setPage(pageNext);
     }
+    setPageOnGoing(parseInt(pageOnGoing) + 1);
     if (!disabledRadio) {
       setPlayOnce(true);
     }
@@ -219,6 +222,7 @@ const Pokemon = () => {
     } else {
       setPage(pagePrevious);
     }
+    setPageOnGoing(parseInt(pageOnGoing) - 1);
     setPlayOnce(true);
   };
 
@@ -277,6 +281,8 @@ const Pokemon = () => {
         targetPage={targetPage}
         setChoicePage={setChoicePage}
         typeOnGoing={typeOnGoing}
+        pageOnGoing={pageOnGoing}
+        setPageOnGoing={setPageOnGoing}
       />
       <NextPrevious
         existPagePrevious={existPagePrevious}

@@ -2,18 +2,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 5px;
+  margin: 30px;
 
   .pokemon-item {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     width: calc(var(--card-size) * 80px);
-    height: calc(var(--card-size) * 125px);
+    height: calc(var(--card-size) * 130px);
     border-radius: calc(var(--card-size) * 5px);
     border: calc(var(--card-size) * 3.75px) solid $color-yellow;
     color: $color-white;
-    margin: calc(var(--card-size) * 2.5px) 0px;
+    margin: calc(var(--card-size) * 2.5px) 5px;
 
     h1 {
       font-size: calc(var(--card-size) * 0.5rem);

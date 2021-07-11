@@ -7,14 +7,21 @@ const InfoGeneral = ({
   targetPage,
   setChoicePage,
   typeOnGoing,
+  pageOnGoing,
+  setPageOnGoing,
 }) => {
+  console.log(pageOnGoing);
+
   return (
     <div className="info-general-container">
       <div>
-        <span>Total pokemon type {typeOnGoing}:</span> <span className="totalPokemon">{count}</span>
+        <span>Page actuelle:</span>
+        <span className="totalPokemon"> {pageOnGoing} </span>
+        <span className="ml">Total pokemon type {typeOnGoing}:</span>{" "}
+        <span className="totalPokemon">{count}</span>
       </div>
       <div>
-        <span>Page</span>
+        <span>Choix de la page:</span>
         <input
           type="number"
           onChange={(e) => setChoicePage(e.target.value)}
@@ -27,7 +34,7 @@ const InfoGeneral = ({
           valider
         </button>
       </div>
-      < AnimationActivation />
+      <AnimationActivation />
     </div>
   );
 };
