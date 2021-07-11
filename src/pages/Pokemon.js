@@ -1,13 +1,17 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import CountPokemonPage from "../components/CountPokemonPage";
+import CountPokemonPage from "../components/components-pokemon/CountPokemonPage";
 import Navigation from "../components/Navigation";
-import NextPrevious from "../components/NextPrevious";
-import PokeCard from "../components/PokeCard";
-import CardSizeRange from "../components/CardSizeRange";
-import SelectTypePokemon from "../components/SelectTypePokemon";
+import NextPrevious from "../components/components-pokemon/NextPrevious";
+import PokeCard from "../components/components-pokemon/PokeCard";
+import CardSizeRange from "../components/components-pokemon/CardSizeRange";
+import SelectTypePokemon from "../components/components-pokemon/SelectTypePokemon";
 
 const Pokemon = () => {
+  document.body.style.setProperty(
+    "background",
+    'url("./img/bg-pokemon.jpg") no-repeat fixed center/cover'
+  );
   // liste des pokemon de la page courante
   const [data, setData] = useState([]);
   // détail des pokemon de la page courante
@@ -114,7 +118,7 @@ const Pokemon = () => {
     setTimeout(() => {
       setDisabledRadio(false);
       setLoading(false);
-    }, 2000);
+    }, 3000);
     if (byType) {
       setNumberCardPageByType(e.target.value);
     } else {
@@ -135,7 +139,7 @@ const Pokemon = () => {
     setTimeout(() => {
       setDisabledRadio(false);
       setLoading(false);
-    }, 3000);
+    }, 4000);
     console.log(e);
     let pageType = "";
     if (e.target.value === "no-type") {
@@ -161,7 +165,7 @@ const Pokemon = () => {
     setTimeout(() => {
       setDisabledRadio(false);
       setLoading(false);
-    }, 2000);
+    }, 3000);
     if (byType) {
       setIndexTabType(parseInt(indexTabType) + parseInt(numberCardPageByType));
     } else {
@@ -224,7 +228,7 @@ const Pokemon = () => {
   // affichage
   return (
     <div className="pokemon-list-container">
-      <Navigation />
+      <Navigation theme="pokemon" />
       <h1 className="header-title">Liste des pokemon</h1>
       <div className="config-page" id="nextPrevious">
         <CountPokemonPage pokemonPerPage={pokemonPerPage} />

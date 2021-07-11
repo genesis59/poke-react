@@ -1,9 +1,22 @@
 const pokeCard = ({ dataDetailPokemon }) => {
+  const setPokemonPicture = (picture) => {
+    let picturePokemon = picture.other.dream_world.front_default;
+
+    if (picturePokemon === null) {
+      picturePokemon = picture.other["official-artwork"]["front_default"];
+
+      if (picturePokemon === null) {
+        picturePokemon = picture.front_default;
+      }
+      console.log(picturePokemon);
+    }
+    return picturePokemon;
+  };
   const addClassType = (pokemon) => {
     let types = pokemon.data.types.map((data) => {
       return "pokemon-item-bg-" + data.type.name;
     });
-    return types[0];
+    return types[0] === "pokemon-item-bg-flying" ? types[1] : types[0];
   };
   return (
     <div className="pokemon-list">
@@ -16,7 +29,7 @@ const pokeCard = ({ dataDetailPokemon }) => {
             <h1>{pokemon.data.name}</h1>
             <div className="pokemon-img-container">
               <img
-                src={pokemon.data.sprites.other.dream_world.front_default}
+                src={setPokemonPicture(pokemon.data.sprites)}
                 alt={pokemon.data.name}
                 className="pokemon-img"
               />

@@ -170,7 +170,7 @@ const SelectTypePokemon = ({ pokemonType, disableRadio }) => {
         <input
           type="radio"
           name="type"
-          id="psychic"
+          id="ice"
           value="15"
           onChange={pokemonType}
           disabled={disableRadio ? "disabled" : ""}
@@ -179,7 +179,7 @@ const SelectTypePokemon = ({ pokemonType, disableRadio }) => {
         <input
           type="radio"
           name="type"
-          id="ice"
+          id="dragon"
           value="16"
           onChange={pokemonType}
           disabled={disableRadio ? "disabled" : ""}

@@ -1,8 +1,11 @@
 @import "./settings";
 @import "./pages/pokemon";
-@import "./components/pokeCard";
-@import "./components/nextPrevious";
+@import "./pages/magic-the-gathering";
+@import "./pages/harry-potter";
+@import "./pages/ghibli";
+@import "./components/components-pokemon/pokeCard";
+@import "./components/components-pokemon/nextPrevious";
 @import "./components/navigation";
-@import "./components/cardSizeRange";
-@import "./components/countPokemonPage";
-@import "./components/selectTypePokemon";
+@import "./components/components-pokemon/cardSizeRange";
+@import "./components/components-pokemon/countPokemonPage";
+@import "./components/components-pokemon/selectTypePokemon";
