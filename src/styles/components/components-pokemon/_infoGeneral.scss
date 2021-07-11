@@ -1,0 +1,45 @@
+.info-general-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $color-white;
+  border-bottom: 3px solid $color-white;
+  padding: 15px;
+  background: $color-black-tr;
+  font-size: 1rem;
+  font-weight: bold;
+  .totalPokemon {
+    color: $color-yellow;
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+  input[type="number"] {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    height: 25px;
+    width: 50px;
+    padding: 5px;
+    margin: 0 5px 0 10px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background: $color-purple-2;
+    color: $color-white;
+    &:hover {
+      border: 3px solid $color-purple-1;
+    }
+  }
+  button {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 2px 5px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background: $color-purple-2;
+    color: $color-white;
+    &:hover {
+      border: 3px solid $color-purple-1;
+    }
+  }
+}

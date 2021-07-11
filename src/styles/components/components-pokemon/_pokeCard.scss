@@ -30,8 +30,7 @@
         margin: calc(var(--card-size) * 1.25px);
 
         &:hover {
-          animation: poke-zoom 2s ease-in-out both;
-          animation-iteration-count: 1;
+          animation: var(--anim-img-card-pokemon);
         }
         @keyframes poke-zoom {
           0% {

@@ -1,0 +1,13 @@
+.anmimation-activation-container {
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background: $color-purple-2;
+    width: 270px;
+    padding: 1px;
+    &:hover {
+    border: 3px solid $color-purple-1;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+}

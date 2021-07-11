@@ -6,6 +6,7 @@ import NextPrevious from "../components/components-pokemon/NextPrevious";
 import PokeCard from "../components/components-pokemon/PokeCard";
 import CardSizeRange from "../components/components-pokemon/CardSizeRange";
 import SelectTypePokemon from "../components/components-pokemon/SelectTypePokemon";
+import InfoGeneral from "../components/components-pokemon/InfoGeneral";
 
 const Pokemon = () => {
   document.body.style.setProperty(
@@ -33,6 +34,10 @@ const Pokemon = () => {
   const [numberCardPageByType, setNumberCardPageByType] = useState(12);
   const [disabledRadio, setDisabledRadio] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [count, setCount] = useState();
+  const [choicePage, setChoicePage] = useState(1);
+  const [typeOnGoing, setTypeOnGoing] = useState("Divers");
+
 
   useEffect(() => {
     if (playOnce) {
@@ -42,7 +47,9 @@ const Pokemon = () => {
           if (byType) {
             setData(res.data.pokemon);
             getDetailPokemon(res.data.pokemon);
+            setCount(res.data.pokemon.length);
           } else {
+            setCount(res.data.count);
             setData(res.data.results);
             getDetailPokemon(res.data.results);
           }
@@ -143,12 +150,14 @@ const Pokemon = () => {
     console.log(e);
     let pageType = "";
     if (e.target.value === "no-type") {
+      setTypeOnGoing("Divers");
       pageType =
         "https://pokeapi.co/api/v2/pokemon?offset=0&limit=" +
         numberCardPageByType;
       setIndexTabType(0);
       setByType(false);
     } else {
+      setTypeOnGoing(e.target.id);
       pageType = "https://pokeapi.co/api/v2/type/" + e.target.value;
       setIndexTabType(0);
       setByType(true);
@@ -157,7 +166,29 @@ const Pokemon = () => {
     setPlayOnce(true);
   };
 
-  // gestion des boutons next/previous
+  // gestion des boutons next/previous et choix de page
+
+  const targetPage = () => {
+    setDisabledRadio(true);
+    setLoading(true);
+    setTimeout(() => {
+      setDisabledRadio(false);
+      setLoading(false);
+    }, 3000);
+    if (byType) {
+      setIndexTabType((choicePage - 1) * numberCardPageByType);
+    } else {
+      setPage(
+        "https://pokeapi.co/api/v2/pokemon?offset=" +
+          (choicePage - 1) * numberCardPageByType +
+          "&limit=" +
+          numberCardPageByType
+      );
+    }
+    if (!disabledRadio) {
+      setPlayOnce(true);
+    }
+  };
 
   const nextPage = () => {
     setDisabledRadio(true);
@@ -240,6 +271,13 @@ const Pokemon = () => {
           disableRadio={disabledRadio}
         />
       </div>
+      <InfoGeneral
+        count={count}
+        numberCardPageByType={numberCardPageByType}
+        targetPage={targetPage}
+        setChoicePage={setChoicePage}
+        typeOnGoing={typeOnGoing}
+      />
       <NextPrevious
         existPagePrevious={existPagePrevious}
         existPageNext={existPageNext}
