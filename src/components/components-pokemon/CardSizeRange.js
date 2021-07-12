@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Gestion de la taille des cartes
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 import React from "react";
 
 const CardSizeRange = ({ cardSize }) => {

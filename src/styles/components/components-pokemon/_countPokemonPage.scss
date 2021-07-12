@@ -1,26 +1,31 @@
+/******************************************************************
+	Fonction	:  Style du composant CountPokemonPage.js
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 .count-pokemon-page-container {
-    width: 50%;
-    label {
-        font-weight: bold;
+  width: 50%;
+  label {
+    font-weight: bold;
+  }
+  .count-pokemon-page-input-container {
+    select {
+      appearance: none;
+      padding-left: 5px;
+      width: 80px;
+      margin-top: 10px;
+      color: $color-white;
+      background-color: $color-purple-2;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 53px;
+      background-image: url("./../../../assets/img/arrow-down.png");
+      outline: none;
+      border: 3px solid $color-white;
+      border-radius: 5px;
+      &:hover {
+        border: 3px solid $color-purple-1;
+      }
     }
-    .count-pokemon-page-input-container {
-        select {
-            appearance: none;
-            padding-left: 5px;
-            width: 80px;
-            margin-top: 10px;
-            color: $color-white;
-            background-color: $color-purple-2;
-            background-size: 20px;
-            background-repeat: no-repeat;
-            background-position: 53px;
-            background-image: url("./../../../assets/img/arrow-down.png");
-            outline: none;
-            border: 3px solid $color-white;
-            border-radius: 5px;
-            &:hover {
-            border: 3px solid $color-purple-1;
-            }
-        }
-    }
+  }
 }

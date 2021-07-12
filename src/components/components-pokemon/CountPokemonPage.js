@@ -1,3 +1,8 @@
+/******************************************************************************
+	Fonction	:  Gestion du selecteur du nombre de cartes à afficher sur la page
+	Creation	:  GV juillet-2021
+ ******************************************************************************/
+
 import React from "react";
 
 const CountPokemonPage = ({ pokemonPerPage }) => {

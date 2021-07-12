@@ -1,25 +1,30 @@
+/******************************************************************
+	Fonction	:  Style du composant HarryPotter.js
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 .harry-potter-list-container {
-    text-align: center;
-    .header-title {
-      display: inline-block;
-      position: relative;
-      font-size: 400%;
-      font-family: "Bangers", cursive;
-      margin: 0px;
-      padding: 20px;
-      color: white;
-      text-shadow: 6px 6px 10px blue;
-      &:after {
-        position: absolute;
-        content: "";
-        border-bottom: 5px solid blue;
-        width: 95%;
-        height: 100%;
-        left: 15px;
-        bottom: 15px;
-      }
+  text-align: center;
+  .header-title {
+    display: inline-block;
+    position: relative;
+    font-size: 400%;
+    font-family: "Bangers", cursive;
+    margin: 0px;
+    padding: 20px;
+    color: white;
+    text-shadow: 6px 6px 10px blue;
+    &:after {
+      position: absolute;
+      content: "";
+      border-bottom: 5px solid blue;
+      width: 95%;
+      height: 100%;
+      left: 15px;
+      bottom: 15px;
     }
-    h1 {
-      margin: 20px;
-    }
+  }
+  h1 {
+    margin: 20px;
+  }
 }

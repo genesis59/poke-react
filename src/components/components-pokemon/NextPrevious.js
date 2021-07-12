@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Gestion des boutons next/previous
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 const NextPrevious = ({
   existPagePrevious,
   existPageNext,

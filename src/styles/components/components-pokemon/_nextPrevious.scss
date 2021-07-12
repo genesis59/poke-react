@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Style du composant NextPrevious.js
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 .nav-next-previous {
   display: flex;
   justify-content: center;
@@ -46,6 +51,5 @@
   }
   100% {
     transform: scale(1);
-
   }
 }

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+/******************************************************************
+	Fonction	:  Composant gestion et animation du menu des types
+	Creation	:  GV juillet-2021
+ ******************************************************************/
 
 const SelectTypePokemon = ({ pokemonType, disableRadio }) => {
   const [textMenu, setTextMenu] = useState("Ouvrir");

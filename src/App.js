@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Centralisation et routage des pages de l'application
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Pokemon from "./pages/Pokemon";
@@ -12,8 +17,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Pokemon} />
           <Route path="/ghibli" exact component={Ghibli} />
-          <Route path="/magic-the-gathering" exact component={ Magic } />
-          <Route path="/harry-potter" exact component={ HarryPotter } />
+          <Route path="/magic-the-gathering" exact component={Magic} />
+          <Route path="/harry-potter" exact component={HarryPotter} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

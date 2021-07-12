@@ -1,3 +1,8 @@
+/*****************************************************************************
+	Fonction	:  Gestion de l'activation/désactivation de l'animation des images
+	Creation	:  GV juillet-2021
+ *****************************************************************************/
+
 import React, { useState } from "react";
 
 const AnimationActivation = () => {

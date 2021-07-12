@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Gestion et affichage des cartes pokemon
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 const pokeCard = ({ dataDetailPokemon }) => {
   const setPokemonPicture = (picture) => {
     let picturePokemon = picture.other.dream_world.front_default;

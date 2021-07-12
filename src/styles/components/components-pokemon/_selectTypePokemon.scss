@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Style du composant SelectTypePokem.js
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 .label-select-type {
   background: $color-black-tr;
   padding-bottom: 15px;
@@ -8,11 +13,11 @@
   border-bottom: 3px solid $color-white;
   p {
     transition: 0.3s;
-    &:hover{  
-        color: $color-purple-1;
-        transform: scale(1.5);
+    &:hover {
+      color: $color-purple-1;
+      transform: scale(1.5);
     }
-  } 
+  }
 }
 .select-type-pokemon-container {
   display: var(--display-open-close);
@@ -43,136 +48,136 @@
   label[for="normal"] {
     color: $color-type-normal;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="fighting"] {
     color: $color-type-ground;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="flying"] {
     color: $color-type-normal;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="poison"] {
     color: $color-type-psychic;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="ground"] {
     color: $color-type-ground;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="rock"] {
     color: $color-type-ground;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="bug"] {
     color: $color-type-grass;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="ghost"] {
     color: $color-type-psychic;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="steel"] {
     color: $color-type-steel;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="fire"] {
     color: $color-type-fire;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="water"] {
     color: $color-type-water;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="grass"] {
     color: $color-type-grass;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="electric"] {
     color: $color-type-electric;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="psychic"] {
     color: $color-type-psychic;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="ice"] {
     color: $color-type-ice;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="dragon"] {
     color: $color-type-dragon;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="dark"] {
     color: $color-type-dark;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="fairy"] {
     color: $color-type-fairy;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
   label[for="tous-types"] {
     color: $color-white;
     &:hover {
-        color: $color-white;
+      color: $color-white;
     }
   }
 }
 
 @keyframes opening {
-    from {
-        opacity: 0;
-        height: 0;
-    }
-    to {
-        opacity: 1;
-        height: 150px;
-    }
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 150px;
+  }
 }
 @keyframes closing {
-    from {
-        opacity: 1;
-        height: 150px;
-    }
-    to {
-        opacity: 0;
-        height: 0;
-    }
+  from {
+    opacity: 1;
+    height: 150px;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
 }

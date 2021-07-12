@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Composant principal de la page harry potter
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 import React from "react";
 import Navigation from "../components/Navigation";
 

@@ -1,3 +1,8 @@
+/******************************************************************
+	Fonction	:  Composant principal de la page pokemon
+	Creation	:  GV juillet-2021
+ ******************************************************************/
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CountPokemonPage from "../components/components-pokemon/CountPokemonPage";
@@ -30,15 +35,22 @@ const Pokemon = () => {
   // existance page précédente/suivante
   const [existPagePrevious, setExistPagePrevious] = useState(true);
   const [existPageNext, setExistPageNext] = useState(true);
+  // recherche par type ?
   const [byType, setByType] = useState(false);
+  // nombre de carte actuel sur la page
   const [numberCardPageByType, setNumberCardPageByType] = useState(12);
+  // activation/désactivation des boutons radio
   const [disabledRadio, setDisabledRadio] = useState(false);
+  // traitement de la requete en cours
   const [loading, setLoading] = useState(false);
+  // nombre de pokemon total du type en cours
   const [count, setCount] = useState();
+  // page ciblée par l'utilisateur
   const [choicePage, setChoicePage] = useState(1);
+  // type actuel
   const [typeOnGoing, setTypeOnGoing] = useState("Divers");
-  const [pageOnGoing,setPageOnGoing] = useState(1);
-
+  // page actuel
+  const [pageOnGoing, setPageOnGoing] = useState(1);
 
   useEffect(() => {
     if (playOnce) {
@@ -87,6 +99,7 @@ const Pokemon = () => {
           }
         }
       };
+      // gestion de l'affichage des boutons next/previous
       const settingButtonNextPrevious = (res) => {
         if (byType) {
           if (indexTabType === 0) {
@@ -119,7 +132,6 @@ const Pokemon = () => {
   }, [data, playOnce, page, byType, numberCardPageByType, indexTabType]);
 
   // gestion nombres de pokemon par page
-
   const pokemonPerPage = (e) => {
     setDisabledRadio(true);
     setLoading(true);
@@ -135,12 +147,10 @@ const Pokemon = () => {
       setPage(newPage);
       setNumberCardPageByType(e.target.value);
     }
-
     setPlayOnce(true);
   };
 
   // gestion des boutons radio pour la selection du type
-
   const pokemonType = (e) => {
     setDisabledRadio(true);
     setLoading(true);

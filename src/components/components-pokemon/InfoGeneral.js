@@ -1,3 +1,8 @@
+/*******************************************************************************
+	Fonction	:  Gestion selecteur de page et nombres total d'entité de la liste
+	Creation	:  GV juillet-2021
+ ******************************************************************************/
+
 import React from "react";
 import AnimationActivation from "./AnimationActivation";
 
