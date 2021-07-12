@@ -14,7 +14,7 @@ const InfoGeneral = ({
   typeOnGoing,
   pageOnGoing,
 }) => {
-  const [error,setError] = useState(false);
+  const [error, setError] = useState(false);
   return (
     <div className="info-general-container">
       <div>
@@ -24,7 +24,12 @@ const InfoGeneral = ({
         <span className="totalPokemon">{count}</span>
       </div>
       <div className="select-page-container">
-        <span className={error ? "error" : ""}>{error ? ("⚠ La page doit être comprise entre 1 et " + String(Math.ceil(count / numberCardPageByType))) : "Choix de la page:"}</span>
+        <span className={error ? "error" : ""}>
+          {error
+            ? "⚠ La page doit être comprise entre 1 et " +
+              String(Math.ceil(count / numberCardPageByType))
+            : "Choix de la page:"}
+        </span>
         <input
           type="number"
           onChange={(e) => {
@@ -43,7 +48,11 @@ const InfoGeneral = ({
           defaultValue="1"
         />
         <span> sur {Math.ceil(count / numberCardPageByType)}</span>
-        <button className={error ? "button-error" : "button-granted"} type="submit" onClick={error ? "" : targetPage}>
+        <button
+          className={error ? "button-error" : "button-granted"}
+          type="submit"
+          onClick={error ? "" : targetPage}
+        >
           {error ? "⛔" : "VALIDER"}
         </button>
       </div>
