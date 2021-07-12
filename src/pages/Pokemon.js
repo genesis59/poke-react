@@ -292,7 +292,6 @@ const Pokemon = () => {
         setChoicePage={setChoicePage}
         typeOnGoing={typeOnGoing}
         pageOnGoing={pageOnGoing}
-        setPageOnGoing={setPageOnGoing}
       />
       <NextPrevious
         existPagePrevious={existPagePrevious}

@@ -21,33 +21,51 @@
   .ml {
     margin-left: 10px;
   }
-  input[type="number"] {
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    height: 25px;
-    width: 50px;
+  .error {
+    color: red;
+    background: $color-white;
+    border: 1px solid red;
+    border-radius: 5px;
     padding: 5px;
-    margin: 0 5px 0 10px;
-    border: 3px solid transparent;
-    border-radius: 5px;
-    background: $color-purple-2;
-    color: $color-white;
-    &:hover {
-      border: 3px solid $color-purple-1;
-    }
   }
-  button {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-left: 10px;
-    padding: 2px 5px;
-    border: 3px solid transparent;
-    border-radius: 5px;
-    background: $color-purple-2;
-    color: $color-white;
-    &:hover {
-      border: 3px solid $color-purple-1;
+  .select-page-container{
+    width: 500px;
+    input[type="number"] {
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+      height: 25px;
+      width: 50px;
+      padding: 5px;
+      margin: 0 5px 0 10px;
+      border: 3px solid transparent;
+      border-radius: 5px;
+      background: $color-purple-2;
+      color: $color-white;
+      &:hover {
+        border: 3px solid $color-purple-1;
+      }
     }
+    button {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 10px;
+      padding: 2px 5px;
+      border: 3px solid transparent;
+      border-radius: 5px;
+      background: $color-purple-2;
+      color: $color-white;
+    }
+    .button-granted {
+      &:hover {
+        border: 3px solid $color-purple-1;
+      }
+    }
+    .button-error {
+      &:hover {
+        border: 3px solid red;
+      }
+    }
+
   }
 }
