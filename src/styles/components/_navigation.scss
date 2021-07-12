@@ -119,7 +119,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: white;
+    color: $color-white;
     z-index: 4;
   }
   .titre-2 {
@@ -156,7 +156,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: white;
+    color: $color-white;
     z-index: 4;
   }
   .titre-2 {
@@ -167,7 +167,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: blue;
+    color: $color-or;
     z-index: 3;
   }
   .titre-3 {
@@ -178,7 +178,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: rgb(12, 12, 121);
+    color: $color-or-clair;
     z-index: 2;
   }
 }

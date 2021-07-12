@@ -12,12 +12,12 @@
     font-family: "Bangers", cursive;
     margin: 0px;
     padding: 20px;
-    color: white;
-    text-shadow: 6px 6px 10px blue;
+    color: $color-or;
+    text-shadow: 6px 6px 10px $color-or-fonce;
     &:after {
       position: absolute;
       content: "";
-      border-bottom: 5px solid blue;
+      border-bottom: 5px solid $color-or;
       width: 95%;
       height: 100%;
       left: 15px;
@@ -26,5 +26,20 @@
   }
   h1 {
     margin: 20px;
+  }
+  .characters-list-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .config-page {
+    background: $color-black-tr;
+    border-top: 3px solid $color-white;
+    border-bottom: 3px solid $color-white;
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }

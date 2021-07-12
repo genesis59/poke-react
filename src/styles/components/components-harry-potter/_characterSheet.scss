@@ -1,0 +1,86 @@
+.character-container {
+  text-align: left;
+  font-family: "Robotto", cursive;
+  position: relative;
+  margin: 10px;
+  width: 30%;
+  height: 330px;
+  border: 15px ridge $color-or-clair;
+  border-radius: 10px;
+  background: $color-or-fonce;
+  box-shadow: 15px 15px 16px 0px rgba(0, 0, 0, 0.75);
+  h2 {
+    position: absolute;
+    top: 5px;
+    left: 40%;
+  }
+  img {
+    position: absolute;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    top: 9px;
+    left: 9px;
+    width: 35%;
+    height: 280px;
+  }
+  ul {
+    position: absolute;
+    left: 57%;
+    top: 165px;
+  }
+  p {
+    left: 40%;
+    position: absolute;
+  }
+  .p1 {
+    top: 45px;
+  }
+  .p2 {
+    top: 65px;
+  }
+  .p3 {
+    top: 85px;
+  }
+  .p4 {
+    top: 105px;
+  }
+  .p5 {
+    top: 125px;
+  }
+  .p6 {
+    top: 145px;
+  }
+  .p7 {
+    top: 165px;
+  }
+  .p8 {
+    top: 231px;
+  }
+  .p9 {
+    top: 251px;
+  }
+  .response {
+    color: $color-yellow;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .character-container {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .character-container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .character-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .character-container {
+    width: 95%;
+  }
+}
