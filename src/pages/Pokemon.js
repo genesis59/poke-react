@@ -35,7 +35,6 @@ const Pokemon = () => {
   const [page, setPage] = useState(
     "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12"
   );
-
   const [disabledRadio, loading, waitLoading] = useLoading();
   // recherche par type ?
   const [byType, setByType] = useState(false);

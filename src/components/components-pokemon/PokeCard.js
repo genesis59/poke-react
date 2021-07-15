@@ -13,7 +13,6 @@ const pokeCard = ({ dataDetailPokemon }) => {
       if (picturePokemon === null) {
         picturePokemon = picture.front_default;
       }
-      console.log(picturePokemon);
     }
     return picturePokemon;
   };
