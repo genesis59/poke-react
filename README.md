@@ -21,3 +21,9 @@ Utilisation d'Open API pour la création d'un front-end avec Réact et Sass
 npm install
 npm start
 ```
+* ou
+
+```bash
+npm install
+yarn start
+```

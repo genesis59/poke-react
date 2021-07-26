@@ -30,6 +30,8 @@ const HarryPotter = () => {
     }
     setPlayOnce(false);
   }, [playOnce, data]);
+
+
   const filterData = (e) => {
     switch (e.target.id) {
       case "all":
@@ -54,11 +56,9 @@ const HarryPotter = () => {
         setDataFiltered(data.filter((item) => item.house === "Ravenclaw"));
         break;
       case "alive":
-        console.log("pas coucou");
         setDataFiltered(data.filter((item) => item.alive === true));
         break;
       case "deceased":
-        console.log("coucou");
         setDataFiltered(data.filter((item) => item.alive === false));
         break;
       default:

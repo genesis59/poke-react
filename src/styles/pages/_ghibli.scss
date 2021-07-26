@@ -12,19 +12,15 @@
     font-family: "Bangers", cursive;
     margin: 0px;
     padding: 20px;
-    color: white;
-    text-shadow: 6px 6px 10px greenyellow;
-    &:after {
-      position: absolute;
-      content: "";
-      border-bottom: 5px solid greenyellow;
-      width: 95%;
-      height: 100%;
-      left: 15px;
-      bottom: 15px;
-    }
+    color: $color-white;
+    text-shadow: 6px 6px 10px $color-blue-2;
   }
   h1 {
     margin: 20px;
+  }
+  .list-film-container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 }

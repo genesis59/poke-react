@@ -175,7 +175,6 @@ const Pokemon = () => {
 };
 
 // Hook récupération de la liste demandé
-
 const useDataPokemon = () => {
   // liste des pokemon de la page courante
   const [data, setData] = useState();
@@ -184,7 +183,6 @@ const useDataPokemon = () => {
   // Hook perso gestion des boutons next/previous
   const [existPagePrevious, existPageNext, pageNext, pagePrevious, setButton] =
     useButtonState();
-
   // détail des pokemon de la page courante
   const [dataDetailPokemon, getDataDetailPokemon] = useDataDetailPokemon([]);
 

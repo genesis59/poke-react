@@ -72,6 +72,7 @@
   }
 }
 .navigation-ghibli {
+  background: $color-black-tr;
   height: 150px;
   position: relative;
   .titre-1 {
@@ -82,7 +83,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: white;
+    color: $color-white;
     z-index: 4;
   }
   .titre-2 {
@@ -93,7 +94,7 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: greenyellow;
+    color: $color-blue;
     z-index: 3;
   }
   .titre-3 {
@@ -104,11 +105,12 @@
     transform: translateY(-50%);
     font-size: 450%;
     font-family: "Bangers", cursive;
-    color: green;
+    color: $color-blue-2;
     z-index: 2;
   }
 }
 .navigation-magic-the-gathering {
+  background: $color-black-tr;
   height: 150px;
   position: relative;
   .titre-1 {
