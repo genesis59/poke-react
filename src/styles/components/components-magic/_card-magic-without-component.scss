@@ -1,0 +1,16 @@
+.card-magic-without-multiverse {
+  justify-content: center;
+  background: black;
+  color: black;
+  border: 1px black solid;
+  margin: 10px;
+  border-radius: 15px;
+  width: var(--card-magic-width);
+  height: var(--card-magic-heigth);
+  .content-card {
+    background: $color-white;
+    margin: calc(var(--card-magic-width) * 0.045);
+    width: calc(var(--card-magic-width) - var(--card-magic-width) * 0.09);
+    height: calc(var(--card-magic-heigth) - var(--card-magic-width) * 0.09);
+  }
+}

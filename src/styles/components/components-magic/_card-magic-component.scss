@@ -1,0 +1,9 @@
+.card-magic-container {
+  width: var(--card-magic-width);
+  height: var(--card-magic-heigth);
+  margin: 10px;
+  img {
+      width: var(--card-magic-width);
+      border-radius: 15px;
+  }
+}
